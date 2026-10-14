@@ -2,6 +2,7 @@
 
 namespace SilverShop\Invoicing;
 
+use SilverShop\Checkout\ShopEmailSender;
 use SilverStripe\Control\Email\Email;
 use SilverStripe\ORM\FieldType\DBDatetime;
 use SilverStripe\Security\Member;
@@ -14,6 +15,8 @@ use SilverStripe\SiteConfig\SiteConfig;
  */
 class DocumentEmailService
 {
+    use ShopEmailSender;
+
     public static function send($document, ?Member $actor = null): bool
     {
         $order = $document->Order();
@@ -25,10 +28,14 @@ class DocumentEmailService
         try {
             $pdf = PdfRenderer::pdf((string) $document->forTemplate());
 
+            $sender = new self();
+
             $email = Email::create();
+            $email->setFrom($sender->senderEmail(), $sender->senderName());
             $email->setTo($recipient);
             $email->setSubject(self::subjectFor($document));
             $email->setHTMLTemplate('SilverShop/Invoicing/Email/DocumentEmail');
+            $email->setPlainTemplate('SilverShop/Invoicing/Email/DocumentEmailPlain');
             $email->setData([
                 'Document' => $document,
                 'Order' => $order,
