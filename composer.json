@@ -1,5 +1,5 @@
 {
-    "name": "silvershop/invoicing",
+    "name": "silvershop-suite/invoicing",
     "description": "Immutable financial documents (invoices / credit memos) with overridable templates for SilverShop.",
     "type": "silverstripe-vendormodule",
     "keywords": ["silverstripe", "silvershop", "ecommerce", "invoice", "accounting"],
@@ -24,7 +24,7 @@
         "php": "^8.3",
         "silverstripe/framework": "^6.0",
         "silvershop/core": "^6",
-        "silvershop/ledger": "*@dev",
+        "silvershop-suite/ledger": "*@dev",
         "dompdf/dompdf": "^3.0",
         "lekoala/silverstripe-cms-actions": "^2.0"
     },
@@ -33,7 +33,7 @@
         "silverstripe/sqlite3": "^4"
     },
     "suggest": {
-        "silvershop/store-profile": "Central shop identity (name, address, VAT, logo) shared with shipping labels and other modules."
+        "silvershop-suite/store-profile": "Central shop identity (name, address, VAT, logo) shared with shipping labels and other modules."
     },
     "extra": {
         "branch-alias": {

@@ -8,7 +8,7 @@ item lines **and** its adjustment lines (discount / tax / shipping / any modifie
 generic `OrderModifier` interface, so no coupling to those modules). The lines reconcile to the order
 total by construction.
 
-Builds on [`silvershop/ledger`](https://github.com/silvershop/silvershop-ledger) (the append-only posting
+Builds on [`silvershop-suite/ledger`](https://github.com/silvershop/silvershop-ledger) (the append-only posting
 trail); this module adds the line-item documents on top.
 
 ## Overriding the invoice template
@@ -33,12 +33,12 @@ wins. (PDF output — rendering this same HTML to PDF — is a planned follow-up
 
 ## Ledger integration
 
-When [`silvershop/ledger`](https://github.com/silvershop/silvershop-ledger) is installed, every invoice
+When [`silvershop-suite/ledger`](https://github.com/silvershop/silvershop-ledger) is installed, every invoice
 and credit memo is **linked to its matching posting entry** (by payment), so the ledger references the
 source document and its CMS **Document** column shows the invoice number. The link is established
 whichever side is created second — the document after the entry (via `InvoiceService` / `CreditMemoService`)
 or the entry after the document (via `PostingEntryDocumentExtension`) — and is wired automatically under a
-`moduleexists: silvershop/ledger` config guard. Without the ledger module everything is a silent no-op, so
+`moduleexists: silvershop-suite/ledger` config guard. Without the ledger module everything is a silent no-op, so
 invoicing works standalone.
 
 ## Licence
