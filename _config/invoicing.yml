@@ -37,7 +37,7 @@ SilverStripe\Forms\GridField\GridFieldDetailForm_ItemRequest:
 ---
 Name: silvershop-invoicing-ledger
 Only:
-  moduleexists: 'silvershop/ledger'
+  moduleexists: 'silvershop-suite/ledger'
 ---
 # Link each ledger posting entry to its source document (invoice / credit memo), when the ledger is present.
 SilverShop\Ledger\ShopPostingEntry:
