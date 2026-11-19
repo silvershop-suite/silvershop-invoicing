@@ -57,8 +57,8 @@ class InvoiceSettingsExtension extends Extension
         // tab if SilverShop's ShopConfigExtension hasn't added the Shop tab.
         $tab = $fields->fieldByName('Root.Shop') ? 'Root.Shop.ShopTabs.Invoicing' : 'Root.Invoicing';
 
-        // The seller identity (name, address, VAT, logo) comes from silvershop/store-profile when it is installed;
-        // otherwise these fields live here so invoicing works standalone.
+        // The seller identity (name, address, VAT, logo) comes from silvershop-suite/store-profile when it is
+        // installed; otherwise these fields live here so invoicing works standalone.
         $identity = $this->usesStoreProfile()
             ? [
                 LiteralField::create('SellerFromProfile', '<p class="message notice">' . _t(
@@ -126,7 +126,7 @@ class InvoiceSettingsExtension extends Extension
     }
 
     /**
-     * Whether silvershop/store-profile is installed (its SiteConfig extension is present).
+     * Whether silvershop-suite/store-profile is installed (its SiteConfig extension is present).
      */
     private function usesStoreProfile(): bool
     {

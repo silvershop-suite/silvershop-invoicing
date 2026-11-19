@@ -1,7 +1,7 @@
 <%-- Customer email accompanying an invoice / credit-memo PDF, in the shop's shared flat transactional-email look
      (white card on a light canvas, #222 accents, shop-name/logo brand). Self-contained (rather than including
      core's OrderEmailHeader/Footer) because the shared shell is not yet in a tagged silvershop/core release; the
-     optional logo brand still lights up via silvershop/store-profile's $SiteConfig.ShopEmailBrand when installed.
+     optional logo brand still lights up via silvershop-suite/store-profile's $SiteConfig.ShopEmailBrand when installed.
      The document PDF is still attached by DocumentEmailService. Override at the same path to restyle. --%>
 <!DOCTYPE html>
 <html>

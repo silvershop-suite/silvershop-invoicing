@@ -59,7 +59,7 @@ class CreditMemoService
             });
         });
 
-        // Reference this document from its ledger posting entry (no-op without silvershop/ledger).
+        // Reference this document from its ledger posting entry (no-op without silvershop-suite/ledger).
         if ($memo) {
             LedgerDocumentLink::linkDocument($memo);
         }

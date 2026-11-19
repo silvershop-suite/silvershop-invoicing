@@ -11,7 +11,7 @@ use SilverStripe\Dev\SapphireTest;
 use SilverStripe\Omnipay\Model\Payment;
 
 /**
- * Covers the invoice ↔ ledger link: when silvershop/ledger is installed, each posting entry references
+ * Covers the invoice ↔ ledger link: when silvershop-suite/ledger is installed, each posting entry references
  * its source document (invoice / credit memo). Exercises both directions — document issued after the
  * entry exists (forward) and entry written after the document exists (reverse) — plus the reverse
  * lookup. Skipped when the ledger is not present. Issuance is driven explicitly, so the test does not
@@ -28,7 +28,7 @@ class LedgerDocumentLinkTest extends SapphireTest
         parent::setUp();
 
         if (!class_exists(ShopPostingEntry::class)) {
-            $this->markTestSkipped('silvershop/ledger is not installed');
+            $this->markTestSkipped('silvershop-suite/ledger is not installed');
         }
     }
 

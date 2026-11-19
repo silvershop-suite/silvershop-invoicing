@@ -8,7 +8,7 @@ use SilverStripe\ORM\DataObject;
 /**
  * Links a financial document (invoice / credit memo) to its matching ledger posting entry, so the ledger
  * references the source document. Order-independent: called both after a document is created and when a
- * posting entry is created (whichever happens second completes the link). No-op if silvershop/ledger is
+ * posting entry is created (whichever happens second completes the link). No-op if silvershop-suite/ledger is
  * not installed.
  */
 class LedgerDocumentLink

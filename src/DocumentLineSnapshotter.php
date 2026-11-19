@@ -178,8 +178,8 @@ class DocumentLineSnapshotter
             $baseByRate[$key] = ($baseByRate[$key] ?? 0.0) + $taxable;
         }
 
-        // Taxed modifier lines (e.g. shipping given a rate by silvershop/vat-compliance) join the base at their own
-        // rate. Order discounts apply to items, so shipping is added at its full amount (not re-apportioned here).
+        // Taxed modifier lines (e.g. shipping given a rate by silvershop-suite/vat-compliance) join the base at their
+        // own rate. Order discounts apply to items, so shipping is added at its full amount (not re-apportioned here).
         foreach ($lines->filter('Kind', 'Modifier') as $modifierLine) {
             $rate = (float) $modifierLine->TaxRate;
             $gross = (float) $modifierLine->Amount;
